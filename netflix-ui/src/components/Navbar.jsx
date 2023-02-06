@@ -73,7 +73,7 @@ const Container = styled.div`
         background-color: black;
     }
     nav{
-        position : sticky;
+        position : fixed;
         top : 0;
         height : 6.5rem;
         width : 100%;

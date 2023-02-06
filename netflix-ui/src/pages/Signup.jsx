@@ -1,5 +1,5 @@
 import {
-  createUserWithEmailAndPassword,
+  createUserWithEmailAndPassword, onAuthStateChanged,
 } from "firebase/auth";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -23,6 +23,10 @@ function Signup() {
       console.log(error);
     }
   };
+
+  onAuthStateChanged(firebaseAuth, (currentUser)=>{
+    if (currentUser) navigate("/")
+  })
 
   return (
     <Container showPassword={showPassword}>
